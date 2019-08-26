@@ -1,7 +1,0 @@
----
-title: "skt nugu AI 항공권 음성 조회 서비스 개발"
-date: 2019-07-16 10:00:00 -0400
-categories: development
----
-
-[항공권 음성 조회 서비스](http://www.techholic.co.kr/news/articleView.html?idxno=179558)
