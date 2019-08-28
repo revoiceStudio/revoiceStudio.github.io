@@ -112,7 +112,7 @@ author:
   avatar           : "/assets/images/bio-photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "dev diary"
   location         : "Seoul, Korea"
-  email            : "revoice.service@gmail.com"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
