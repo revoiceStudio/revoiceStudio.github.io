@@ -20,13 +20,13 @@ locale                   : "en-US"
 title                    : "Revoice Studio"
 title_separator          : "-"
 name                     : "revoice"
-description              : "dev diary"
+description              : "리보이스의 블로그입니다."
 url                      : "https://revoiceStudio.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "revoiceStudio/revoiceStudio.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "/assets/images/how.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/how.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "masthead_title" # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "Revoice Studio" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs            : true # true, false (default)
 words_per_minute         : 200
 comments:
