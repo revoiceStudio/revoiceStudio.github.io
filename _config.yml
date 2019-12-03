@@ -37,4 +37,4 @@ permalink: /posts/:title/
 excerpt_separator: <!--more-->
 author: http://www.github.com/revoiceStudio
 
-host: 0.0.0.0
+host: https://revoiceStudio.github.io/
