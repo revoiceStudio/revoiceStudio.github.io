@@ -6,13 +6,13 @@ categories: Development
 tags: alexa
 ---
 
-### **1편에서는 기본 Default Region Endpoint를 이용하여 code 작성을 해보았습니다.**
+#### **1편에서는 기본 Default Region Endpoint를 이용하여 code 작성을 해보았습니다.**
 
-### **2편에서는 AWS Lambda를 새로 생성하여 알렉사 스킬에 연결해보는 과정을 진행해보겠습니다.**
+#### **2편에서는 AWS Lambda를 새로 생성하여 알렉사 스킬에 연결해보는 과정을 진행해보겠습니다.**
 
-# **1.AWS Lambda 생성하기**
+## **1.AWS Lambda 생성하기**
 
-#### AWS Lambda 에 접속하여 콘솔에 로그인 합니다.
+#### [AWS Lambda](https://aws.amazon.com/ko/lambda/) 에 접속하여 콘솔에 로그인 합니다.
 
 ![](/assets/images/alexa-guide2/1-1.png "1-1")
 
@@ -32,23 +32,23 @@ tags: alexa
 
 ![](/assets/images/alexa-guide2/1-5.png "1-5")
 
-# **2.Lambda의 트리거에 알렉사 추가하기**
+## **2.Lambda의 트리거에 알렉사 추가하기**
 
 #### 위에서 생성된 Lambda 화면에서 구성 탭-> 블럭으로 되어 있는 + 트리거 추가 버튼을 누릅니다. 트리거 구성에서 Alexa Skills Kit을 선택합니다.
 
 ![](/assets/images/alexa-guide2/2-1.png "2-1")
 
-#### 알렉사 디벨로퍼 콘솔 -> 스킬선택 -> 왼쪽의 Endpoint 탭 클릭 -> Your Skill ID를 복사하여 스킬 ID에 붙여넣기하고 Add를 눌러 트리거 추가를 완료합니다.
+#### [알렉사 디벨로퍼 콘솔](https://developer.amazon.com/alexa/console/ask) -> 스킬선택 -> 왼쪽의 Endpoint 탭 클릭 -> Your Skill ID를 복사하여 스킬 ID에 붙여넣기하고 Add를 눌러 트리거 추가를 완료합니다.
 
 ![](/assets/images/alexa-guide2/2-2.png "2-2")
 
-# **3.알렉사 Endpoint를 AWS Lambda에 연결하기**
+## **3.알렉사 Endpoint를 AWS Lambda에 연결하기**
 
 #### 맨 위에 적혀있는 ARN을 복사합니다.
 
 ![](/assets/images/alexa-guide2/3-1.png "3-1")
 
-#### 알렉사 디벨로퍼 콘솔 -> 스킬선택 -> 왼쪽의 Endpoint 탭 클릭 -> Default Region에 붙여넣기 하고 Save Endpoints를 눌러 저장한 후 build해줍니다.
+#### [알렉사 디벨로퍼 콘솔](https://developer.amazon.com/alexa/console/ask) -> 스킬선택 -> 왼쪽의 Endpoint 탭 클릭 -> Default Region에 붙여넣기 하고 Save Endpoints를 눌러 저장한 후 build해줍니다.
 
 ![](/assets/images/alexa-guide2/3-2.png "3-2")
 
@@ -56,9 +56,9 @@ tags: alexa
 
 ![](/assets/images/alexa-guide2/3-3.png "3-3")
 
-# **4.AWS Lambda에 코드 업로드하기**
+## **4.AWS Lambda에 코드 업로드하기**
 
-#### 참고 : building-amazon-alexa-skills-nodejs
+#### 참고 : [building-amazon-alexa-skills-nodejs](https://www.thepolyglotdeveloper.com/2018/11/building-amazon-alexa-skills-nodejs-revisited/)
 
 ```
 npm 초기화 및 알렉사 모듈 설치
@@ -70,32 +70,43 @@ npm install ask-sdk —-s. //알렉사 모듈 설치
 
 #### 프로젝트 구조는 아래와 같습니다.
 
-/  
--- node_modules  
-&nbsp;&nbsp;&nbsp;&nbsp;⌙ 모듈들...  
--- lastBread.js  
--- package.json  
--- package-lock.json
+#### /
+
+#### -- node_modules
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;⌙ 모듈들...
+
+#### -- lastBread.js
+
+#### -- package.json
+
+#### -- package-lock.json
 
 #### 프로젝트의 root 에서 아래의 명령어를 실행하여 zip 파일을 생성합니다.
 
-zip -r lastBread.zip ./node_modules/\* ./lastBread.js
+`zip -r lastBread.zip ./node_modules/\* ./lastBread.js`
 
 #### 결과
 
-/  
--- node_modules  
-&nbsp;&nbsp;&nbsp;&nbsp;⌙ 모듈들...  
--- lastBread.js  
--- package.json  
--- package-lock.json  
--- lastBread.zip
+#### /
+
+#### -- node_modules
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;⌙ 모듈들...
+
+#### -- lastBread.js
+
+#### -- package.json
+
+#### -- package-lock.json
+
+#### -- lastBread.zip
 
 #### 다시 Lambda 화면으로 돌아와서 구성탭 -> 함수 코드 -> Code Entry type을 ".zip 파일 업로드”로 선택하고 위에서 생성한 lastBread.zip파일을 업로드합니다. 그리고 핸들러 영역에서 lastBread.js가 메인파일이기 때문에 module name을 lastBread로 변경하여 lastBread.handler 라고 입력해줍니다. 마지막으로, 맨위의 Save 버튼을 눌러 저장합니다.
 
 ![](/assets/images/alexa-guide2/4.png "4")
 
-# **5.테스트**
+## **5.테스트**
 
 #### 다시 알렉사 디벨로퍼 콘솔로 와서 테스트를 해보면 정상적으로 응답이 오는 것을 확인하실 수 있습니다.
 
