@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>2. 알렉사 lambda 연결하기</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>알렉사 lambda 연결하기 | 리보이스</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="알렉사 lambda 연결하기" />
+<meta name="author" content="inseop kim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="알렉사 lambda 연결하기" />
+<meta property="og:description" content="알렉사 lambda 연결하기" />
+<link rel="canonical" href="http://0.0.0.0:4000/posts/alexa-guide2/" />
+<meta property="og:url" content="http://0.0.0.0:4000/posts/alexa-guide2/" />
+<meta property="og:site_name" content="리보이스" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-04T14:00:00+00:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"알렉사 lambda 연결하기","url":"http://0.0.0.0:4000/posts/alexa-guide2/","dateModified":"2019-12-04T14:00:00+00:00","datePublished":"2019-12-04T14:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/posts/alexa-guide2/"},"author":{"@type":"Person","name":"inseop kim"},"description":"알렉사 lambda 연결하기","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+  <body>
+    <header class="texture-black">
+      <div class="container"><div class="navbar">
+  <ul>
+    <a href="/"><li>Home</li></a>
+    <a href="/posts/about/"><li>About</li></a>
+  </ul>
+</div></div><div class="container">
+	<h1>2. 알렉사 lambda 연결하기</h1>
+	<h4 class="post-description">알렉사 lambda 연결하기</h4>
+	<div class="post-date" style="margin-top:20px">
+		Published on Dec 4, 2019
+	</div>
+	<ul class="post-tags"><li>아마존</li><li>알렉사</li></ul>
+</div>
+</header>
+    <main>
+      <div class="container">
+        <div class="post-container">
+          <p>1편에서는 기본 Default Region Endpoint를 이용하여 code 작성을 해보았습니다.<br />
+2편에서는 AWS Lambda를 새로 생성하여 알렉사 스킬에 연결해보는 과정을 진행해보겠습니다.</p>
+
+<h2 id="1aws-lambda-생성하기">1.AWS Lambda 생성하기</h2>
+
+<p><a href="https://aws.amazon.com/ko/lambda/">AWS Lambda</a> 에 접속하여 콘솔에 로그인 합니다.
+<img src="/assets/images/alexa-guide2/1-1.png" alt="" />
+위에 있는 서비스 탭에서 -&gt; 컴퓨팅 -&gt; Lambda를 클릭합니다.
+<img src="/assets/images/alexa-guide2/1-2.png" alt="" />
+왼쪽의 함수 탭을 클릭하여 함수 생성하기 버튼을 누릅니다.
+<img src="/assets/images/alexa-guide2/1-3.png" alt="" />
+함수 이름을 적고 함수를 생성합니다.
+<img src="/assets/images/alexa-guide2/1-4.png" alt="" />
+생성이 완료되었습니다.
+<img src="/assets/images/alexa-guide2/1-5.png" alt="" /></p>
+
+<h2 id="2lambda의-트리거에-알렉사-추가하기">2.Lambda의 트리거에 알렉사 추가하기</h2>
+
+<p>위에서 생성된 Lambda 화면에서 구성 탭-&gt; 블럭으로 되어 있는 + 트리거 추가 버튼을 누릅니다. 트리거 구성에서 Alexa Skills Kit을 선택합니다.
+<img src="/assets/images/alexa-guide2/2-1.png" alt="" />
+<a href="https://developer.amazon.com/alexa/console/ask">알렉사 디벨로퍼 콘솔</a> -&gt; 스킬선택 -&gt; 왼쪽의 Endpoint 탭 클릭 -&gt; Your Skill ID를 복사하여 스킬 ID에 붙여넣기하고 Add를 눌러 트리거 추가를 완료합니다.
+<img src="/assets/images/alexa-guide2/2-2.png" alt="" /></p>
+
+<h2 id="3알렉사-endpoint를-aws-lambda에-연결하기">3.알렉사 Endpoint를 AWS Lambda에 연결하기</h2>
+
+<p>맨 위에 적혀있는 ARN을 복사합니다.
+<img src="/assets/images/alexa-guide2/3-1.png" alt="" />
+<a href="https://developer.amazon.com/alexa/console/ask">알렉사 디벨로퍼 콘솔</a> -&gt; 스킬선택 -&gt; 왼쪽의 Endpoint 탭 클릭 -&gt; Default Region에 붙여넣기 하고 Save Endpoints를 눌러 저장한 후 build해줍니다.
+<img src="/assets/images/alexa-guide2/3-2.png" alt="" />
+build 후, Code 탭에 들어가보니 Endpoint가 새로 생성한 Lambda로 변경됐기 때문에, 아래의 코드가 더이상 호스트되지 않는다고 나옵니다.
+이제는 여기에 작성된 코드는 더 이상 호출되지 않고 위에서 생성했던 Lambda 함수가 호출될 것입니다.
+<img src="/assets/images/alexa-guide2/3-3.png" alt="" /></p>
+
+<h2 id="4aws-lambda에-코드-업로드하기">4.AWS Lambda에 코드 업로드하기</h2>
+
+<p>참고 : <a href="https://www.thepolyglotdeveloper.com/2018/11/building-amazon-alexa-skills-nodejs-revisited/">building-amazon-alexa-skills-nodejs</a></p>
+
+<p>npm 초기화 및 알렉사 모듈 설치</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init -y
+npm install ask-sdk —-s. //알렉사 모듈 설치
+</code></pre></div></div>
+
+<p>lastBread.js 생성 후( 파일 명은 바꾸셔도 됩니다. ) Code 탭의 index.js의 내용을 전체 복사하여 붙여넣기 합니다.</p>
+
+<p>프로젝트 구조는 아래와 같습니다.</p>
+
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span>
+
+<span class="nt">-</span> <span class="nt">node_modules</span> <span class="nt">-</span> <span class="err">모듈들</span><span class="nc">...</span>
+<span class="nt">-</span> <span class="nt">lastBread</span><span class="nc">.js</span>
+<span class="nt">-</span> <span class="nt">package</span><span class="nc">.json</span>
+<span class="nt">-</span> <span class="nt">package-lock</span><span class="nc">.json</span>
+</code></pre></div></div>
+
+<p>프로젝트의 root 에서 아래의 명령어를 실행하여 zip 파일을 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip -r lastBread.zip ./node_modules/\* ./lastBread.js
+</code></pre></div></div>
+
+<p>결과</p>
+
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">/</span>
+
+<span class="nt">-</span> <span class="nt">node_modules</span> <span class="nt">-</span> <span class="err">모듈들</span><span class="nc">...</span>
+<span class="nt">-</span> <span class="nt">lastBread</span><span class="nc">.js</span>
+<span class="nt">-</span> <span class="nt">package</span><span class="nc">.json</span>
+<span class="nt">-</span> <span class="nt">package-lock</span><span class="nc">.json</span>
+<span class="nt">-</span> <span class="nt">lastBread</span><span class="nc">.zip</span>
+</code></pre></div></div>
+
+<p>다시 Lambda 화면으로 돌아와서 구성탭 -&gt; 함수 코드 -&gt; Code Entry type을 “.zip 파일 업로드”로 선택하고 위에서 생성한 lastBread.zip파일을 업로드합니다.<br />
+그리고 핸들러 영역에서 lastBread.js가 메인파일이기 때문에 module name을 lastBread로 변경하여 lastBread.handler 라고 입력해줍니다. 마지막으로, 맨위의 Save 버튼을 눌러 저장합니다.
+<img src="/assets/images/alexa-guide2/4.png" alt="" /></p>
+
+<h2 id="5테스트">5.테스트</h2>
+
+<p>다시 알렉사 디벨로퍼 콘솔로 와서 테스트를 해보면 정상적으로 응답이 오는 것을 확인하실 수 있습니다.
+<img src="/assets/images/alexa-guide2/5.png" alt="" />
+지금까지 람다 함수 생성부터 람다&lt;-&gt;알렉사 연결 과정, 람다 코드 업로드까지 전체적인 과정을 다뤄봤습니다.</p>
+
+<p>감사합니다.</p>
+
+        </div>
+
+        <!-- Configure Disqus --><div id="disqus_thread" style="margin-top:25px"></div>
+        <script>
+          var disqus_config = function() {
+            this.page.url = "http://0.0.0.0:4000/posts/alexa-guide2/";
+            this.page.identifier = "http://0.0.0.0:4000/posts/alexa-guide2/";
+          };
+          (function() {
+            var d = document,
+              s = d.createElement("script");
+            s.src =
+              "https://revoice-studio.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript
+          >Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow"
+            >comments powered by Disqus.</a
+          ></noscript
+        ></div>
+    </main></body>
+</html>

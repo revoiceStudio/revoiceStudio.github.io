@@ -17,13 +17,14 @@ texture:
   tagline: Developer. VUX
   date_format: "%b %-d, %Y"
   style: black
-  showNav: false
+  showNav: true
   showPicker: false
-
+  disqus_shortname: revoice-studio
   # generate social links in footer
   social_links:
     #twitter: thelehhman
     github: revoiceStudio
+    revoice: revoice
     #linkedIn: in/thelehhman
     rss: rss
 

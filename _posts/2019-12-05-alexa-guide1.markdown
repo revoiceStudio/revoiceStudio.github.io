@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "알렉사 스킬 생성해보기"
-description: 알렉사 스킬 생성부터 테스트까지
+title: "1. 알렉사 스킬 생성하기"
+description: 알렉사 스킬 생성하기
 date: 2019-12-04 00:03:36 -0400
 categories: 아마존 알렉사
 ---
 
-알렉사 스킬 생성부터 테스트까지
+알렉사 스킬 생성부터 Invocation name 등록, Intent와 Endpoint의 Code를 수정하여 알렉사가 적절하게 응답을 하는지
+테스트를 하는 과정을 담았습니다.
 
 [알렉사 스킬 가이드](https://developer.amazon.com/docs/custom-skills/steps-to-build-a-custom-skill.html)
 

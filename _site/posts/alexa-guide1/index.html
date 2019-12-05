@@ -5,29 +5,34 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
-<title>알렉사 스킬 생성해보기</title>
+<title>1. 알렉사 스킬 생성하기</title>
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>알렉사 스킬 생성해보기 | 리보이스</title>
+<title>알렉사 스킬 생성하기 | 리보이스</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="알렉사 스킬 생성해보기" />
+<meta property="og:title" content="알렉사 스킬 생성하기" />
 <meta name="author" content="inseop kim" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="알렉사 스킬 생성부터 테스트까지" />
-<meta property="og:description" content="알렉사 스킬 생성부터 테스트까지" />
+<meta name="description" content="알렉사 스킬 생성하기" />
+<meta property="og:description" content="알렉사 스킬 생성하기" />
 <link rel="canonical" href="http://0.0.0.0:4000/posts/alexa-guide1/" />
 <meta property="og:url" content="http://0.0.0.0:4000/posts/alexa-guide1/" />
 <meta property="og:site_name" content="리보이스" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-12-04T04:03:36+00:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"알렉사 스킬 생성해보기","url":"http://0.0.0.0:4000/posts/alexa-guide1/","dateModified":"2019-12-04T04:03:36+00:00","datePublished":"2019-12-04T04:03:36+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/posts/alexa-guide1/"},"author":{"@type":"Person","name":"inseop kim"},"description":"알렉사 스킬 생성부터 테스트까지","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"알렉사 스킬 생성하기","url":"http://0.0.0.0:4000/posts/alexa-guide1/","dateModified":"2019-12-04T04:03:36+00:00","datePublished":"2019-12-04T04:03:36+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/posts/alexa-guide1/"},"author":{"@type":"Person","name":"inseop kim"},"description":"알렉사 스킬 생성하기","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 </head>
   <body>
     <header class="texture-black">
-      <div class="container"></div><div class="container">
-	<h1>알렉사 스킬 생성해보기</h1>
-	<h4 class="post-description">알렉사 스킬 생성부터 테스트까지</h4>
+      <div class="container"><div class="navbar">
+  <ul>
+    <a href="/"><li>Home</li></a>
+    <a href="/posts/about/"><li>About</li></a>
+  </ul>
+</div></div><div class="container">
+	<h1>1. 알렉사 스킬 생성하기</h1>
+	<h4 class="post-description">알렉사 스킬 생성하기</h4>
 	<div class="post-date" style="margin-top:20px">
 		Published on Dec 4, 2019
 	</div>
@@ -37,7 +42,8 @@
     <main>
       <div class="container">
         <div class="post-container">
-          <p>알렉사 스킬 생성부터 테스트까지</p>
+          <p>알렉사 스킬 생성부터 Invocation name 등록, Intent와 Endpoint의 Code를 수정하여 알렉사가 적절하게 응답을 하는지
+테스트를 하는 과정을 담았습니다.</p>
 
 <p><a href="https://developer.amazon.com/docs/custom-skills/steps-to-build-a-custom-skill.html">알렉사 스킬 가이드</a></p>
 
@@ -97,6 +103,26 @@ Invocation Name은 알렉사에서 특정 스킬을 호출할 때 부르는 이�
 
         </div>
 
-        <!-- Configure Disqus --></div>
+        <!-- Configure Disqus --><div id="disqus_thread" style="margin-top:25px"></div>
+        <script>
+          var disqus_config = function() {
+            this.page.url = "http://0.0.0.0:4000/posts/alexa-guide1/";
+            this.page.identifier = "http://0.0.0.0:4000/posts/alexa-guide1/";
+          };
+          (function() {
+            var d = document,
+              s = d.createElement("script");
+            s.src =
+              "https://revoice-studio.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript
+          >Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow"
+            >comments powered by Disqus.</a
+          ></noscript
+        ></div>
     </main></body>
 </html>
